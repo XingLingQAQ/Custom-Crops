@@ -542,7 +542,7 @@ public abstract class AbstractRequirementManager<T> implements RequirementManage
                 plugin.getPluginLogger().warn("Invalid value type: " + args.getClass().getSimpleName() + " found at == requirement which is expected be `Section`");
                 return Requirement.empty();
             }
-        }, "==");
+        }, "==", "=");
         registerRequirement((args, actions, runActions) -> {
             if (args instanceof Section section) {
                 MathValue<T> v1 = MathValue.auto(section.get("value1"));
@@ -989,7 +989,7 @@ public abstract class AbstractRequirementManager<T> implements RequirementManage
                                         Optional<CustomCropsChunk> optionalChunk = customCropsWorld.getLoadedChunk(tempPos3.toChunkPos());
                                         if (optionalChunk.isPresent()) {
                                             CustomCropsChunk chunk = optionalChunk.get();
-                                            Optional<CustomCropsBlockState> optionalState = chunk.getBlockState(pos3);
+                                            Optional<CustomCropsBlockState> optionalState = chunk.getBlockState(tempPos3);
                                             if (optionalState.isPresent() && optionalState.get().type() instanceof ScarecrowBlock) {
                                                 if (advanced) ActionManager.trigger(context, actions);
                                                 return false;
