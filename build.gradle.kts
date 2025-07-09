@@ -33,12 +33,10 @@ subprojects {
 
 fun versionBanner() = project.providers.exec {
     commandLine("git", "rev-parse", "--short=8", "HEAD")
-    standardOutput = output
     isIgnoreExitValue = true 
 }.standardOutput.asText.map { it.trim() }.getOrElse("Unknown")
 
 fun builder() = project.providers.exec {
     commandLine("git", "config", "user.name")
-    standardOutput = output
     isIgnoreExitValue = true 
 }.standardOutput.asText.map { it.trim() }.getOrElse("Unknown")
