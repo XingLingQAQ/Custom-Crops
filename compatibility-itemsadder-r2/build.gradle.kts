@@ -1,6 +1,6 @@
 repositories {
     mavenCentral()
-    maven("https://www.matteodev.it/spigot/public/maven/")
+    maven("http://www.matteodev.it/spigot/public/maven/")
     maven("https://repo.papermc.io/repository/maven-public/")
 }
 
