@@ -1,13 +1,13 @@
 repositories {
     mavenCentral()
-    maven("https://maven.devs.beer/")
+    maven("https://jitpack.io")
     maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
     compileOnly(project(":api"))
     compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
-    compileOnly("dev.lone:api-itemsadder:4.0.10")
+    compileOnly("com.github.XingLingQAQ:API-ItemsAdder:67a3805413")
 }
 
 java {
